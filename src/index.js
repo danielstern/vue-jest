@@ -1,13 +1,26 @@
 import Vue from 'vue';
-import App from "./routes/Home";
+import App from "./App.vue";
+import Chat from './routes/Chat/Chat.vue';
 
-console.log("Runnin that script")
+import { ChatMessageService } from './services/chatMessageService.js';
+
+const chatComponent = Vue.component('Chat',Chat);
 const app = new Vue({
-    el:"#App",
-    render: h => h(App)
+        el:"#App",
+        render: h => h(App),
+        components:{
+            "Chat":chatComponent
+        }
+        // components: {
+            // "Chat":Chat
+        // },
+    },
+    {
+        ChatMessageService
+    }
     
 
     // data: {
     //     message: 'Hello Vue.js!'
     // }
-});''
+);
