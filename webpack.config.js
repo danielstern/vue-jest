@@ -11,25 +11,16 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue'],
     },
-    "plugins":[
+    plugins:[
         new VueLoaderPlugin()
     ],
     module: {
-        // plugins: [new VueLoaderPlugin()],
         rules: [
             { 
                 test: /\.vue$/,
                 loader:['vue-loader'],
-                
-                // exclude: /(node_modules)/,
-                // use: {
-                //     loader: 'vue-loader',
-                //     options: {
-                //         "plugins":[
-                //             new VueLoaderPlugin()
-                //         ]
-                //     }
-                // }
+                exclude: /(node_modules)/,
+
             },
             {
                 test: /\.js$/,
@@ -50,26 +41,7 @@ module.exports = {
                     }
                 }
             },
-            {
-                test: /\.css$/,
-                use: [
-                  'vue-style-loader',
-                  'css-loader'
-                //   {
-                //     loader: ,
-                //     options: {
-                //       // enable CSS Modules
-                //       modules: true,
-                //       // customize generated class names
-                //       localIdentName: '[local]_[hash:base64:8]'
-                //     }
-                //   }
-                ]
-            }
-            // {
-            //     test: /\.css$/,
-            //     use: [ 'style-loader', 'css-loader' ]
-            // }
+            
         ]
     },
     devServer: {
@@ -77,21 +49,5 @@ module.exports = {
         contentBase: ['./bin', './public'],
         inline: true,
         hot: true
-    },
-    // serve:{
-    //     port: 9000,
-    //     options:{
-    //         port: 9000
-    //     }
-    // }
-    /* Whole block just doesn't work. Webpack serve is poorly documented but funcional enough. */
-    // serve : {
-
-    //     options: {
-
-    //         content: [resolve(__dirname, "public")]
-
-    //     }        
-        
-    // }
+    }
 };

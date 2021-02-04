@@ -1,31 +1,50 @@
 <template>
+
     <div class="container mt-5">
-        <Chat/>
+
+        <Chat :handleSubmitChatMessage="this.handleSubmitChatMessage" :messages="this.$data.messages"/>
+
     </div>
+
 </template>
+
 <script>
+
+    import { ChatMessageService } from './services/chatMessageService.js';
+
     export default {
-        data:(a)=>{
 
-            console.log("processing data..",a);
-            return {};
+        data(){
+
+            return {
+
+                messages: []
+            }
 
         },
-        mounted() {
+        async mounted(){
+
+            const messages = await ChatMessageService.getMessages();
+            this.$data.messages.push(... messages);
 
         },
-        methods: {
+        methods:{
+
+            async handleSubmitChatMessage(content){
+
+                const message = {
+                    content,
+                    sender: "YOU"
+                }
+
+                await ChatMessageService.submitMessage(message);
+
+                this.$data.messages.push(message);
+
+            }
 
         }
+
     }
+
 </script>
-<style scoped>
-
-    /* .chat-messages-window {
-        width: 100%;
-        border: 1px solid gainsboro;
-        height: 100;
-        background-color: pink;
-    } */
-
-</style>

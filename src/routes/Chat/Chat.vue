@@ -1,31 +1,32 @@
 <template>
+
     <div>
+
         <h1>
+
 
             Globoticket Customer Service Chat
 
         </h1>
+
         <div class="card mb-3">
 
             <div class="card-body">
-                
-                <div>
 
-                    <strong>M:</strong> <span>Hello. This is customer support.</span>
+                <div v-for="message in messages" v-bind:key="message.id">
 
-                </div>
-
-                <div>
-
-                    <strong>M:</strong> <span>How can we assist you today?</span>
+                    <strong>{{message.sender}}:</strong> <span>{{message.content}}</span>
 
                 </div>
 
             </div>
             
         </div>
+
         <div>
+
             <form class="form-inline">
+
                 <div class="form-group mb-2 mr-2">
 
                     <input type="text" placeholder="Your message" class="form-control" v-model="userMessage">
@@ -38,18 +39,21 @@
 
         </div>
     </div>
+
 </template>
 <script>
     export default {
-        data:(a)=>{
+
+        data(){
+
+            console.log("This?", this);
 
             return {
-                userMessage:""
-            };
 
-        },
-        mounted() {
-
+                userMessage: "Where is my order?",
+                messages: this.$attrs.messages || []
+            
+            }
         },
         methods: {
 
@@ -57,8 +61,11 @@
 
                 e.preventDefault();
                 console.log("Submitted message", this.userMessage);
+                this.$attrs.handleSubmitChatMessage(this.userMessage);
+
             }
 
         }
+
     }
 </script>
