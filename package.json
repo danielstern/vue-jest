@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "test": "jest"
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -23,12 +22,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^5.0.1",
-    "jest": "^26.6.3",
-    "jest-cli": "^26.6.3",
-    "jest-serializer-vue": "^2.0.2",
-    "jest-transform-stub": "^2.0.0",
     "style-loader": "^2.0.0",
-    "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.3",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.12",
