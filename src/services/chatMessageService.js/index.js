@@ -34,7 +34,6 @@ export const ChatMessageService = {
         return function*(){
 
             console.log("You subscribed");
-            // What should the subscribe generator return?
             
         }
 
