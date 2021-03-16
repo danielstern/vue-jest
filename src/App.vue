@@ -11,6 +11,7 @@
 <script>
 
     import { ChatMessageService } from './services/chatMessageService.js';
+    const chatMessageService = ChatMessageService();
 
     export default {
 
@@ -24,7 +25,6 @@
         },
         async mounted(){
             
-            const chatMessageService = ChatMessageService();
             const messages = await chatMessageService.getMessages();
             this.$data.messages.push(... messages);
 
@@ -38,7 +38,7 @@
                     sender: "YOU"
                 }
 
-                await ChatMessageService.submitMessage(message);
+                await chatMessageService.submitMessage(message);
 
                 this.$data.messages.push(message);
 

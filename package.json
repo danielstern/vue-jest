@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start-dev": "webpack-dev-server",
+    "start": "node ./index",
     "test": "jest",
-    "test-ws": "jest -- workshop/index.spec.js"
+    "test-ws": "jest -- workshop/index.spec.js",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "uuid": "^8.3.2",
     "vue": "^2.6.12"
   },
