@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Service should match the snapshot 1`] = `
+<div>
+  <h1>
+    
+
+
+        Globoticket Customer Service Chat
+
+    
+  </h1>
+   
+  <div
+    class="card mb-3"
+  >
+    <div
+      class="card-body"
+    />
+  </div>
+   
+  <div>
+    <form
+      class="form-inline"
+    >
+      <div
+        class="form-group mb-2 mr-2"
+      >
+        <input
+          class="form-control"
+          placeholder="Your message"
+          type="text"
+        />
+      </div>
+       
+      <button
+        class="btn btn-primary mb-2"
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+`;
