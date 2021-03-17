@@ -8,7 +8,8 @@
     "start": "node ./index",
     "test": "jest",
     "test-ws": "jest -- workshop/index.spec.js",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "git push origin master"
   },
   "keywords": [],
   "author": "",
