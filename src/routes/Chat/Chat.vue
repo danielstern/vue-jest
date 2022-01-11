@@ -5,7 +5,7 @@
         <h1>
 
 
-            Globoticket Customer Service Chat
+            Even Better Globoticket Customer Service Chat
 
         </h1>
 
@@ -20,7 +20,7 @@
                 </div>
 
             </div>
-            
+
         </div>
 
         <div>
@@ -34,7 +34,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-2" v-on:click="handleMessageSubmit">Send</button>
-       
+
             </form>
 
         </div>
@@ -51,7 +51,7 @@
 
                 userMessage: "Where is my order?",
                 messages: this.$attrs.messages || []
-            
+
             }
 
         },
